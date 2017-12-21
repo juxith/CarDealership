@@ -1,0 +1,15 @@
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\CarDealership.Models.dll.config
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\CarDealership.Models.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\CarDealership.Models.pdb
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\EntityFramework.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\EntityFramework.SqlServer.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\EntityFramework.xml
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\EntityFramework.SqlServer.xml
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.csproj.CoreCompileInputs.cache
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.dll
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.pdb
+C:\Repos\dotnet-judy-thao\FullStackDev\CarDealership\CarDealership.Models\obj\Debug\CarDealership.Models.csprojResolveAssemblyReference.cache

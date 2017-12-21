@@ -1,0 +1,56 @@
+﻿@model CarDealership.Models.Tables.Model
+@{
+    ViewBag.Title = "AddModel";
+}
+
+<h2>Model</h2>
+<div class="container">
+<div class=" col-xs-12 ">
+    @using (Html.BeginForm("AddModel", "Admin"))
+    {
+        @Html.ValidationSummary()
+        <div class="col-xs-8">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Add Model</h4>
+                </div>
+                <div class="panel-body">
+
+                    <div class="col-xs-12">
+                        <div class="col-xs-2">
+                            <label>New Model</label>
+                        </div>
+                        <div class="form-row col-xs-4">
+                            @Html.TextBoxFor(m => m.ModelName, new { @class = "form-control", @placeholder = "Enter new make" })
+                            @Html.ValidationMessageFor(c => c.ModelName, null, new { @class = "error" })
+                        </div>
+                        <div class="col-xs-1">
+                            <label>Make</label>
+                        </div>
+                        <div class="form-row col-xs-3">
+                            @Html.DropDownListFor(m => m.MakeId, new SelectList(String.Empty, "Value", "Text"), "-Select Make-", new { @class = "form-control", @placeholder = "Enter new make" })
+                            @Html.ValidationMessageFor(c => c.Make.MakeId, null, new { @class = "error" })
+                        </div>
+                        <div class="form-group col-xs-1">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="col -xs-12 container" >
+    <table id="modelsTable" style="border:solid">
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Date Added</th>
+            <th>User</th>
+        </tr>
+    </table>
+
+</div>
+</div>
+<script src="~/Scripts/Admin.js"></script>

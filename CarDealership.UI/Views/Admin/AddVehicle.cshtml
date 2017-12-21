@@ -1,0 +1,114 @@
+﻿@model CarDealership.UI.Models.VehicleVM
+@{
+    ViewBag.Title = "Add";
+}
+
+<br/>
+<div>
+    <div class="container">
+        <!--purchase form goes here-->
+
+        @using (Html.BeginForm("AddVehicle", "Admin"))
+        {
+            <div class="col-xs-6">
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">Add Vehicle</h4>
+                    </div>
+                    <div class="panel-body">
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(v => v.Vehicle.Model.Make)
+                            @Html.DropDownListFor(m => m.Vehicle.Model.MakeId, Model.MakeItems, "-Select Make-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.BodyType, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(v => v.Vehicle.Model)
+                            @Html.DropDownListFor(m => m.Vehicle.ModelId, new SelectList(string.Empty, "Value", "Text"), "-Select Model-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.BodyType, null, new { @class = "error" })
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(v => v.Vehicle.BodyType)
+                            @Html.DropDownListFor(m => m.Vehicle.BodyTypeId, Model.BodyTypeItems, "-Select Body Type-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.BodyType, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.VehicleYear)
+                            @Html.TextBoxFor(m => m.Vehicle.VehicleYear, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.VehicleYear, null, new { @class = "error" })
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.IsNewType)
+                            @Html.DropDownListFor(m => m.Vehicle.IsNewType, Model.ListOfTypes, "-Select New or Used-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.IsNewType, null, new { @class = "error" })
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.IsAutomatic)
+                            @Html.DropDownListFor(m => m.Vehicle.IsAutomatic, Model.ListTransmission, "-Select Transmission-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.VehicleYear, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.BodyColor)
+                            @Html.DropDownListFor(m => m.Vehicle.BodyColorId, Model.BodyColorItems, "-Select Body Color-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.BodyColor, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.InteriorColor)
+                            @Html.DropDownListFor(m => m.Vehicle.InteriorColorId, Model.InteriorItems, "-Select Interior Color-", new { @class = "form-control" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.InteriorColor, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.Mileage)
+                            @Html.TextBoxFor(m => m.Vehicle.Mileage, new { @class = "form-control", @placeholder = "Enter E-Mail Here" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.Mileage, null, new { @class = "error" })
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.VinNumber)
+                            @Html.TextBoxFor(m => m.Vehicle.VinNumber, new { @class = "form-control", @placeholder = "Enter VIN #" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.VinNumber, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.MSRP)
+                            @Html.TextBoxFor(m => m.Vehicle.MSRP, new { @class = "form-control", @placeholder = "Enter MSRP" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.MSRP, null, new { @class = "error" })
+                        </div>
+
+                        <div class="form-group col-xs-6">
+                            @Html.LabelFor(m => m.Vehicle.SalePrice)
+                            @Html.TextBoxFor(m => m.Vehicle.SalePrice, new { @class = "form-control", @placeholder = "Enter sale price" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.SalePrice, null, new { @class = "error" })
+                        </div>
+
+
+                        <div class="form-group col-xs-12">
+                            @Html.LabelFor(m => m.Vehicle.VehicleDescription)
+                            @Html.TextAreaFor(m => m.Vehicle.VehicleDescription, new { @class = "form-control", @placeholder = "Enter description" })
+                            @Html.ValidationMessageFor(c => c.Vehicle.VehicleDescription, null, new { @class = "error" })
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+<script src="~/Scripts/Admin.js"></script>

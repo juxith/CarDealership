@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BEA2735D-4EAD-4849-A594-C2FB18C92FEB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CarDealership.Data</RootNamespace>
+    <AssemblyName>CarDealership.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.1\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.3.1.0\lib\net45\Microsoft.Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.3.1.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.2.1.0\lib\net45\Microsoft.Owin.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.Cookies, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.Cookies.2.1.0\lib\net45\Microsoft.Owin.Security.Cookies.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Security.OAuth, Version=2.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Security.OAuth.2.1.0\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>..\packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarDealershipEntities.cs" />
+    <Compile Include="FactoryAndRepos\EFRepository.cs" />
+    <Compile Include="FactoryAndRepos\RepositoryFactory.cs" />
+    <Compile Include="FactoryAndRepos\InMemoryRepository.cs" />
+    <Compile Include="IRepositoryInterface.cs" />
+    <Compile Include="Migrations\201711050232055_init.cs" />
+    <Compile Include="Migrations\201711050232055_init.Designer.cs">
+      <DependentUpon>201711050232055_init.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711122156451_switchingToEF.cs" />
+    <Compile Include="Migrations\201711122156451_switchingToEF.Designer.cs">
+      <DependentUpon>201711122156451_switchingToEF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711141605019_updatedIdentity.cs" />
+    <Compile Include="Migrations\201711141605019_updatedIdentity.Designer.cs">
+      <DependentUpon>201711141605019_updatedIdentity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711142001597_addedToUsertable.cs" />
+    <Compile Include="Migrations\201711142001597_addedToUsertable.Designer.cs">
+      <DependentUpon>201711142001597_addedToUsertable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711152211008_addintToPurchases.cs" />
+    <Compile Include="Migrations\201711152211008_addintToPurchases.Designer.cs">
+      <DependentUpon>201711152211008_addintToPurchases.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711160531589_update.cs" />
+    <Compile Include="Migrations\201711160531589_update.Designer.cs">
+      <DependentUpon>201711160531589_update.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711161908215_updating.cs" />
+    <Compile Include="Migrations\201711161908215_updating.Designer.cs">
+      <DependentUpon>201711161908215_updating.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711162220211_addedNullPurchasePrsice.cs" />
+    <Compile Include="Migrations\201711162220211_addedNullPurchasePrsice.Designer.cs">
+      <DependentUpon>201711162220211_addedNullPurchasePrsice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711170133458_updateTables.cs" />
+    <Compile Include="Migrations\201711170133458_updateTables.Designer.cs">
+      <DependentUpon>201711170133458_updateTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201711170603115_updatingAGAIN.cs" />
+    <Compile Include="Migrations\201711170603115_updatingAGAIN.Designer.cs">
+      <DependentUpon>201711170603115_updatingAGAIN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarDealership.Models\CarDealership.Models.csproj">
+      <Project>{bb0cdaef-8f2b-43b3-a419-f0928531d706}</Project>
+      <Name>CarDealership.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201711050232055_init.resx">
+      <DependentUpon>201711050232055_init.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711122156451_switchingToEF.resx">
+      <DependentUpon>201711122156451_switchingToEF.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711141605019_updatedIdentity.resx">
+      <DependentUpon>201711141605019_updatedIdentity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711142001597_addedToUsertable.resx">
+      <DependentUpon>201711142001597_addedToUsertable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711152211008_addintToPurchases.resx">
+      <DependentUpon>201711152211008_addintToPurchases.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711160531589_update.resx">
+      <DependentUpon>201711160531589_update.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711161908215_updating.resx">
+      <DependentUpon>201711161908215_updating.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711162220211_addedNullPurchasePrsice.resx">
+      <DependentUpon>201711162220211_addedNullPurchasePrsice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711170133458_updateTables.resx">
+      <DependentUpon>201711170133458_updateTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201711170603115_updatingAGAIN.resx">
+      <DependentUpon>201711170603115_updatingAGAIN.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

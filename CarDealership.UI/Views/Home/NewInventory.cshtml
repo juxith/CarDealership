@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "NewInventory";
+}
+
+<h2>New Vehicles</h2>
+
+<div style="border: solid">
+    <p>Quick Search</p>
+   
+        <input type="text" placeholder="Enter make, model, or year" id="searchTerm" />
+        <label>Price</label>
+    <select id="minPrice" required>
+        <option value="0" selected="selected">No Min</option>
+        @for (var i = 5000; i <= 50000; i += 5000)
+        {
+            var setMin = i.ToString().Insert(i.ToString().Length - 3, ",");
+            <option value="@i">$@setMin</option>
+        }
+    </select>
+    <select id="maxPrice" required>
+        <option value="0" selected="selected">No Max</option>
+        @for (var i = 10000; i <= 80000; i += 5000)
+        {
+            var setMax = i.ToString().Insert(i.ToString().Length - 3, ",");
+            <option value="@i">$@setMax</option>
+        }
+    </select>
+    <label>Year</label>
+    <select id="minYear" required>
+        <option value="0" selected="selected">No Min</option>
+        @for (var i = 2018; i >= 1990; i--)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+    <select id="maxYear" required>
+        <option value="0" selected="selected">No Max</option>
+        @for (var i = 2018; i >= 1990; i--)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+    <button class="btn btn-default" id="newCarSearchButton">Search</button>
+</div>
+<div id="searchResultsSection">
+    <h2>Search Result</h2>
+    <div class="container">
+        <p id="newSearchResults"></p>
+    </div>
+</div>
+
+<div id="detailsSection">
+    <h2>Vehicle Details</h2>
+    <div class="container">
+        <p id="newCarDetails"></p>
+    </div>
+</div>

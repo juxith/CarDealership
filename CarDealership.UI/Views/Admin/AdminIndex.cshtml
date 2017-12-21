@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<h2>Admin</h2>
+@Html.ActionLink("Add a new Vehicle", "AddVehicle", "Admin")<br />
+@Html.ActionLink("Add Make", "AddMake", "Admin")<br/>
+@Html.ActionLink("Add Model", "AddModel", "Admin")<br/>
+@Html.ActionLink("Users","Users","Admin")<br/>
+@Html.ActionLink("Manage Specials", "Specials", "Admin")<br/>
+@Html.ActionLink("View Reports", "ReportsIndex", "Reports")<br/>
+
+<div style="border: solid">
+    <p>Quick Search</p>
+
+    <input type="text" placeholder="Enter make, model, or year" id="searchTerm" />
+    <label>Price</label>
+    <select id="minPrice" required>
+        <option value="0" selected="selected">No Min</option>
+        @for(var i = 5000; i <= 50000; i+=5000)
+        {
+            var setMin = i.ToString().Insert(i.ToString().Length -3, ",");
+            <option value="@i">$@setMin</option>
+        }
+    </select>
+    <select id="maxPrice" required>
+        <option value="0" selected="selected">No Max</option>
+        @for (var i = 10000; i <= 80000; i += 5000)
+        {
+            var setMax = i.ToString().Insert(i.ToString().Length - 3, ",");
+            <option value="@i">$@setMax</option>
+        }
+    </select>
+    <label>Year</label>
+    <select id="minYear" required>
+        <option value="0" selected="selected">No Min</option>
+        @for (var i = 2018; i >= 1990; i --)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+    <select id="maxYear" required>
+        <option value="0" selected="selected">No Max</option>
+        @for (var i = 2018; i >= 1990; i--)
+        {
+            <option value="@i">@i</option>
+        }
+    </select>
+    <button class="btn btn-primary" id="adminCarSearchButton">Search</button>
+    <button class="btn btn-default" type="reset">Clear Search</button>
+</div>
+<div id="adminResultsSection">
+    <h2>Search Result</h2>
+    <div class="container">
+        <p id="adminSearchResults"></p>
+    </div>
+</div>
+<script src="~/Scripts/Admin.js"></script>

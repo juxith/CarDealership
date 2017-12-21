@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "Sales";
+}
+
+<h2>Sales Report</h2>
+
+<div class="container">
+    <div class="col-xs-12" style="border:solid">
+        <div class=" form-group"><p>Filters</p></div><div class="col-xs-10"></div>
+        <div class="row col-xs-4">
+            <label>User</label>
+            <select id="userSearch">
+                <option value="none">-All-</option>
+            </select>
+        </div>
+        <div class="row col-xs-4">
+            <label>From Date</label>
+            <input type="date" id="minDate" />
+        </div>
+        <div class="row col-xs-4">
+            <label>To Date</label>
+            <input type="date" id="maxDate" />
+        </div>
+        <button type="button" class="btn btn-default" id="reportSearchBtn">Search</button>
+    </div>
+
+    <br />
+    <br />
+
+    <div>
+        <h3>Search Results</h3><br />
+        <div>
+            <div>
+                <table>
+                    <tr>
+                        <th>User</th>
+                        <th>Total Sales</th>
+                        <th>Total Vehicles</th>
+                    </tr>
+                </table>
+                <table id="searchResultsSection"></table>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Scripts/Reports.js"></script>

@@ -1,0 +1,47 @@
+﻿@model CarDealership.Models.Tables.Make
+@{
+    ViewBag.Title = "AddMake";
+}
+
+<h2>Makes</h2>
+
+<div>
+    @using (Html.BeginForm("AddMake", "Admin"))
+    {
+        <div class="col-xs-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Add Make</h4>
+                </div>
+                <div class="panel-body">
+
+                    <div class="col-xs-12">
+                        <div class="col-xs-3">
+                            <label>New Make</label>
+                        </div>
+                        <div class="form-row col-xs-6">
+                            @Html.TextBoxFor(m => m.MakeName, new { @class = "form-control", @placeholder="Enter new make" })
+                            @Html.ValidationMessageFor(c => c.MakeName, null, new { @class = "error" })
+                        </div>
+                        <div class="form-group col-xs-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<div class="col -xs-12 container">
+    <table id="makesTable" style="border:solid">
+        <tr>
+            <th>Make</th>
+            <th>Date Added</th>
+            <th>User</th>
+        </tr>
+    </table>
+</div>
+
+<script src="~/Scripts/Admin.js"></script>
+

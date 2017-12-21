@@ -1,0 +1,57 @@
+﻿@model CarDealership.Models.Tables.ContactUs
+@{
+    ViewBag.Title = "Contact";
+}
+
+<h2>Contact Us</h2>
+
+<div class="row">
+    <div class="col-xs-6">
+    @using (Html.BeginForm("Contact", "Home"))
+    {
+        @Html.HiddenFor(c => c.VehicleId)
+        <div class="col-xs-12 col-sm-6">
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h4 class="panel-title">Contact Form</h4>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.ContactName)
+                        @Html.TextBoxFor(m => m.ContactName, new { @class = "form-control", @placeholder = "Enter Name Here" })
+                        @Html.ValidationMessageFor(c => c.ContactName, null, new { @class = "error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email)
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Enter E-Mail Here" })
+                        @Html.ValidationMessageFor(c => c.Email, null, new { @class = "error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Phone)
+                        @Html.TextBoxFor(m => m.Phone, new { @class = "form-control", @placeholder = "Phone #" })
+                        @Html.ValidationMessageFor(c => c.Phone, null, new { @class = "error" })
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Message)
+                        @Html.TextAreaFor(m => m.Message, new { @class = "form-control", @id = "Message" })
+                        @Html.ValidationMessageFor(c => c.Message, null, new { @class = "error" })
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+            </div>
+        </div>
+    }
+        </div>
+    <div class="col-xs-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2822.2629416266814!2d-93.2740116842249!3d44.97896937909816!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x52b332907d3fdc11%3A0xefe411dc0e94d298!2s15+S+5th+St%2C+Minneapolis%2C+MN+55402!5e0!3m2!1sen!2sus!4v1510899531624" width="400" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>15 5th Street<br/>
+        Minneapolis, MN 55402<br/>
+        <br/>
+        Sales: 111-111-1111<br/>
+        Service: 111-111-1112</p>
+    </div>
+</div>
+
+
+
+

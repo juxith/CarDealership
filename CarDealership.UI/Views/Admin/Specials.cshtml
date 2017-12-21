@@ -1,0 +1,49 @@
+﻿@model CarDealership.Models.Tables.Special
+@{
+    ViewBag.Title = "Specials";
+}
+
+<h2>Specials</h2>
+
+<br />
+<div>
+    <div class="container">
+        <!--purchase form goes here-->
+        <div class="container" id="specialFormSection">
+            @using (Html.BeginForm("Specials", "Admin", new { @id = "specialForm" }))
+            {
+                @Html.ValidationSummary()
+                <div class="col-xs-4">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Add Special</h4>
+                        </div>
+                        <div class="panel-body">
+
+
+                            <div class="form-group col-xs-12">
+                                @Html.LabelFor(v => v.Title)
+                                @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(c => c.Title, null, new { @class = "error" })
+                            </div>
+
+
+                            <div class="form-group col-xs-12">
+                                @Html.LabelFor(v => v.SpecialDescription)
+                                @Html.TextAreaFor(m => m.SpecialDescription, new { @class = "form-control" })
+                                @Html.ValidationMessageFor(c => c.SpecialDescription, null, new { @class = "error" })
+                            </div>
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+
+    <div class="container" id="adminSpecialsSection">
+    </div>
+</div>
+<script src="~/Scripts/Admin.js"></script>

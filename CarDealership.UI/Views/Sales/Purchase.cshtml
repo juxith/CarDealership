@@ -1,0 +1,132 @@
+﻿@model CarDealership.UI.Models.PurchaseVM
+@{
+    ViewBag.Title = "Purchase";
+}
+
+<h2>Purchase</h2>
+
+<div class="container" id="purchaseDetailsSection">
+    <div class="container">
+
+        <div class="container" style="border: solid">
+            <h4>@Model.Vehicle.VehicleYear @Model.Vehicle.Model.Make.MakeName @Model.Vehicle.Model.ModelName</h4>
+            <div class="row">
+                <div class="col-xs-3">
+                    <img src="~/Images/Uploaded/@Model.Vehicle.ImageFileLink" class="vehicleImages">
+                </div>
+                <div class="col-xs-3">
+                    <p>Body Style: @Model.Vehicle.BodyType.BodyTypeName</p>
+                    <p>
+                        Trans:
+
+                        @if (Model.Vehicle.IsAutomatic == true)
+                        {
+                            <span>Automatic</span>
+                        }
+                        else
+                        {
+                            <span></span>
+                        }
+                    </p><p>Color: @Model.Vehicle.BodyColor.ColorName</p>
+                </div>
+                <div class="col-xs-3">
+                    <p>Interior: @Model.Vehicle.InteriorColor.InteriorColorName</p>
+                    <p>Mileage: @Model.Vehicle.Mileage</p><p>VIN #: @Model.Vehicle.VinNumber</p>
+                </div>
+                <div class="col-xs-3">
+                    <p>SalePrice: $@Model.Vehicle.SalePrice</p>
+                    <p>MSRP: $@Model.Vehicle.MSRP</p>
+                    <p></p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-3"><p></p></div><div class="col-xs-9"><p>Description: @Model.Vehicle.VehicleDescription</p></div>
+                <div class="row"><div class="col-xs-9"><p></p></div><div class="col-xs-3"></div></div>
+            </div>
+        </div>
+
+        <di id="purchaseFormSection">
+            <h2>Sales Information</h2>
+            <div class="container">
+                <!--purchase form goes here-->
+
+                @using (Html.BeginForm("Purchase", "Sales"))
+            {       
+                    @Html.HiddenFor(v => v.Vehicle.VehicleId)
+                    @Html.HiddenFor(p => p.Purchase.VehicleId, new { id = "vehicleId" })
+                    <div class="col-xs-6">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">Customer and Purchase Information</h4>
+                            </div>
+                            <div class="panel-body">
+
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.CustomerFirstName)
+                                    @Html.TextBoxFor(m => m.Purchase.CustomerFirstName, new { @class = "form-control", @placeholder = "Enter First Name Here" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.CustomerFirstName, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.CustomerLastName)
+                                    @Html.TextBoxFor(m => m.Purchase.CustomerLastName, new { @class = "form-control", @placeholder = "Enter Last Name Here" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.CustomerLastName, null, new { @class = "error" })
+                                </div>
+
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.Email)
+                                    @Html.TextBoxFor(m => m.Purchase.Email, new { @class = "form-control", @placeholder = "Enter E-mail Here" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.Email, null, new { @class = "error" })
+                                </div>
+
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.Phone)
+                                    @Html.TextBoxFor(m => m.Purchase.Phone, new { @class = "form-control", @placeholder = "Phone #" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.Phone, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.Street1)
+                                    @Html.TextBoxFor(m => m.Purchase.Street1, new { @class = "form-control", @placeholder = "Enter Street Address " })
+                                    @Html.ValidationMessageFor(c => c.Purchase.Street1, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.Street2)
+                                    @Html.TextBoxFor(m => m.Purchase.Street2, new { @class = "form-control", @placeholder = "Enter Additional Address" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.Street2, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.City)
+                                    @Html.TextBoxFor(m => m.Purchase.City, new { @class = "form-control", @placeholder = "Enter City" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.City, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.StateAbrv)
+                                    @Html.DropDownListFor(m => m.Purchase.StateAbrv, Model.StatesItems, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.StateAbrv, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.Zipcode)
+                                    @Html.TextBoxFor(m => m.Purchase.Zipcode, new { @class = "form-control", @placeholder = "Enter Zipcode " })
+                                    @Html.ValidationMessageFor(c => c.Purchase.Zipcode, null, new { @class = "error" })
+                                </div>
+                                <div class="container col-xs-12">
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.PurchasePrice)
+                                    @Html.TextBoxFor(m => m.Purchase.PurchasePrice, new { @class = "form-control", @placeholder = "Enter Purchase Price " })
+                                    @Html.ValidationMessageFor(c => c.Purchase.PurchasePrice, null, new { @class = "error" })
+                                </div>
+                                <div class="form-group col-xs-6">
+                                    @Html.LabelFor(m => m.Purchase.PurchaseType)
+                                    @Html.DropDownListFor(m => m.Purchase.PurchaseTypeId, Model.PurchaseTypeItems, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(c => c.Purchase.PurchaseType, null, new { @class = "error" })
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                    </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </di>
+    </div>
+    <script src="~/Scripts/Purchase.js"></script>
